@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Repository
-public class StudentRepo implements IParentRepo {
+public class StudentRepo implements IParentRepository {
     private final static List<Student> students = new ArrayList<>();;
 
     @Override

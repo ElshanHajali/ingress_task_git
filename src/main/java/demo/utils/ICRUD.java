@@ -1,8 +1,8 @@
-package demo.repository;
+package demo.utils;
 
 import java.util.List;
 
-public interface IParentRepo {
+public interface ICRUD {
 
     List<Object> fetchAll();
     Object fetchById(long id);
