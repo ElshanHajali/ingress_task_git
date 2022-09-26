@@ -1,3 +1,3 @@
-# ingress_task_git
-student_management demo app
-# New changes applied
+# Ingress Git Task
+This task is applied over student_management demo application
+
