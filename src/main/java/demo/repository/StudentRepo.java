@@ -19,7 +19,7 @@ public class StudentRepo implements IParentRepo {
 
     @Override
     public Object fetchById(long id) {
-        return students.get((int)id);
+        return students.get((int)id - 1);
     }
 
     @Override
@@ -33,23 +33,22 @@ public class StudentRepo implements IParentRepo {
     }
 
     @Override
-    public boolean update(Object obj, long id) {
-        Student existStudent = students.get((int)id);
-        Student tmpStudent = (Student) obj;
+    public boolean update(String name, long id) {
+        Student existStudent = students.get((int)id - 1);
         if (
-                Strings.isNotEmpty(tmpStudent.getName()) &&
-                !tmpStudent.getName().equalsIgnoreCase("") &&
-                !tmpStudent.getName().equals(existStudent.getName())
+                Strings.isNotEmpty(name) &&
+                !name.equalsIgnoreCase("") &&
+                !name.equals(existStudent.getName())
         ) {
-            existStudent.setName(tmpStudent.getName());
+            existStudent.setName(name);
             return true;
         } else return false;
     }
 
     @Override
     public boolean delete(long id) {
-        if (students.get((int) id) != null) {
-            students.remove((int)id);
+        if (students.get((int) id - 1) != null) {
+            students.remove((int)id - 1);
             return true;
         } else return false;
     }
