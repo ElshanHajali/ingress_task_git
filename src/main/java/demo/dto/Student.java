@@ -3,11 +3,13 @@ package demo.dto;
 import lombok.*;
 
 @AllArgsConstructor
+@NoArgsConstructor
+@Setter
 @Getter
 @ToString
 @EqualsAndHashCode
 @Builder
 public class Student {
-    private final int id;
-    private final String name;
+    private long id;
+    private String name;
 }
